@@ -60,30 +60,30 @@ export default function Donation({ className, ...props }: DonationProps) {
           <div className="absolute right-0 md:-right-24 top-0 flex flex-col items-center">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-24 w-24"
+              className="h-16 sm:h-24 w-16 sm:w-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-16 w-16" />
+            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
           </div>
-          <div className="absolute -right-16 md:-right-64 top-24 flex flex-col items-center opacity-50">
+          <div className="absolute -right-10 md:-right-64 top-24 flex flex-col items-center opacity-50">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-24 w-24"
+              className="h-16 sm:h-24 w-16 sm:w-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-16 w-16" />
+            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
           </div>
 
-          <div className="absolute left-0 md:-left-24 -top-24 flex flex-col items-center opacity-50">
+          <div className="absolute left-0 md:-left-24 -top-16 flex flex-col items-center opacity-50">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-24 w-24"
+              className="h-16 sm:h-24 w-16 sm:w-24"
             />
           </div>
-          <div className="absolute -left-16 md:-left-64 top-24 flex flex-col items-center">
+          <div className="absolute -left-10 md:-left-64 top-24 flex flex-col items-center">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-24 w-24"
+              className="h-16 sm:h-24 w-16 sm:w-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-16 w-16" />
+            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
           </div>
         </div>
       </div>

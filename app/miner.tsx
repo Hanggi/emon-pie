@@ -24,7 +24,7 @@ export default function Miner({ className, ...props }: MinerProps) {
           须知：10天后才能提取，如果不提取就继续挖掘。
         </p>
         <Button variant="xl/outline">链接钱包</Button>
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-12 w-full">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-12 w-full sm:w-fit md:w-full">
           {cards?.map((card, index) => (
             <div
               key={index}
@@ -45,7 +45,7 @@ export default function Miner({ className, ...props }: MinerProps) {
                   </Button>
                 </div>
               </div>
-              <div className="bg-white bg-opacity-10 flex flex-col justify-between text-center rounded-[12px] h-[105.9px] sm:h-[168px] px-1 pb-2 sm:px-3">
+              <div className="bg-white bg-opacity-10 flex flex-col justify-between text-center rounded-[12px] h-[105.9px] sm:h-[168px] px-2 pb-2 sm:px-3">
                 <h1 className="text-[46px] sm:text-[74px] leading-none text-primary">
                   10
                 </h1>
