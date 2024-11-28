@@ -11,6 +11,7 @@ interface MapProps extends HTMLAttributes<HTMLDivElement> {}
 export default function Map({ className, ...props }: MapProps) {
   return (
     <>
+    <Images.hr reverse />
       <div className={cn('container lg:mt-12', className, {})} {...props}>
         <div className="-mb-1 flex md:-mb-5 md:gap-14 md:pr-12 lg:gap-20">
           {images.map((item, i) => (
