@@ -1,13 +1,14 @@
 import About from './about';
+import Chart from './chart';
 import Claim from './claim';
 import Donation from './donation';
 import Header from './header';
 import HowTo from './how-to';
 import Map from './map';
 import Miner from './miner';
-import Model from './model';
+// import Model from './model';
 import Pledge from './pledge';
-import TokenModel from './token-model';
+// import TokenModel from './token-model';
 
 export default async function IndexPage() {
   return (
@@ -18,9 +19,10 @@ export default async function IndexPage() {
       <Claim id="领取空投" />
       <Pledge id="质押挖矿" />
       <Donation id='集体捐赠'/>
-      <TokenModel id="代币模型" />
+      {/* <TokenModel id="代币模型" /> */}
       <Miner id='NFT挖矿'/>
-      <Model id='代币模型'/>
+      {/* <Model id='代币模型'/> */}
+      <Chart id="代币模型"/>
       <Map id="路线图" />
     </>
   );

@@ -13,18 +13,18 @@ export default function Miner({ className, ...props }: MinerProps) {
     <>
       <div
         className={cn(
-          'container mb-4 flex flex-col items-center gap-4',
+          'container mb-4 flex flex-col items-center gap-4 py-6',
           className,
           {}
         )}
         {...props}
       >
         <Text intent={'heading'}>NFT挖矿</Text>
-        <p className="text-white/70 text-[20px] leading-[26px] font-[400] mb-2">
+        <p className="text-white/70 text-[14px] sm:text-[20px] sm:leading-[26px] font-[400] sm:mb-2">
           须知：10天后才能提取，如果不提取就继续挖掘。
         </p>
-        <Button variant="xl/outline">链接钱包</Button>
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-12 w-full sm:w-fit md:w-full">
+        <Button variant="xl/outline" className='hidden sm:block'>链接钱包</Button>
+        <div className="mt-6 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full sm:w-fit lg:w-full">
           {cards?.map((card, index) => (
             <div
               key={index}
@@ -45,11 +45,11 @@ export default function Miner({ className, ...props }: MinerProps) {
                   </Button>
                 </div>
               </div>
-              <div className="bg-white bg-opacity-10 flex flex-col justify-between text-center rounded-[12px] h-[105.9px] sm:h-[168px] px-2 pb-2 sm:px-3">
+              <div className="bg-white bg-opacity-10 flex flex-col justify-between text-center rounded-[12px] h-[105.9px] sm:h-[168px] px-2 pb-2 sm:px-3 ">
                 <h1 className="text-[46px] sm:text-[74px] leading-none text-primary">
                   10
                 </h1>
-                <p className="text-[20px] text-white opacity-70">可提数量</p>
+                <p className="text-[14px] sm:text-[20px] text-white opacity-70">可提数量</p>
                 <Button variant="sm/outline">提取代币</Button>
               </div>
             </div>

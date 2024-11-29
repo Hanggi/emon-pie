@@ -51,7 +51,7 @@ export default function Donation({ className, ...props }: DonationProps) {
               </Text>
             </div>
             <ClipboardInput />
-            <div className="w-[380px]">
+            <div className="w-[380px] px-10 md:px-0">
               <Button full className="border" variant="lg/default">
                 链接钱包
               </Button>

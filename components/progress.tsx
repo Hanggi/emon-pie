@@ -4,13 +4,13 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 interface ProgressBarProps {
-  progress: number; // Progress in percentage
-  label: string; // Display label (e.g., "30亿")
+  progress: number;
+  label: string; 
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress, label }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false }); // Trigger animation once when in view
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div className="flex items-center justify-center">

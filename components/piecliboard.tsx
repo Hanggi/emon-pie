@@ -6,24 +6,21 @@ const PieClipboardInput: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('0x....'); // Replace with your value
+    navigator.clipboard.writeText('0x....');
     setCopied(true);
 
-    setTimeout(() => setCopied(false), 1000); // Reset "Copied" message after 2 seconds
+    setTimeout(() => setCopied(false), 1000);
   };
 
   return (
-    <div className="relative flex items-center justify-between w-full bg-[#ffdd64] text-black border border-primary rounded-full h-[55px] px-6">
-      {/* Address Text */}
+    <div className="relative flex items-center justify-between w-full bg-[#ffdd64] text-black border border-primary rounded-full h-[50px] px-6">
       <span className="text-lg sm:text-2xl">
         捐赠地址：<span className="opacity-80">0x....</span>
       </span>
 
       <div className="flex items-center">
-        {/* Vertical Divider */}
         <div className="h-6 w-[1px] bg-primary mx-3"></div>
 
-        {/* Copy Button */}
         <button
           onClick={handleCopy}
           className="flex items-center justify-center"
@@ -47,9 +44,8 @@ const PieClipboardInput: React.FC = () => {
         </button>
       </div>
 
-      {/* Copied Tooltip */}
       {copied && (
-        <span className="absolute top-[-30px] right-4 bg-primary text-purple-500 px-2 py-1 rounded">
+        <span className="absolute top-[-30px] right-4 bg-[#ffdd64] text-black px-2 py-1 rounded">
           Copied!
         </span>
       )}

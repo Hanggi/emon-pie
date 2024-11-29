@@ -23,7 +23,9 @@ export default function HowTo({ className, ...props }: HowToProps) {
           {cards.map((card, i) => (
             <div
               key={card.label}
-              className="bg-primary flex items-start gap-1 rounded-2xl border px-4 py-3.5 md:px-10 md:py-6 lg:max-h-52"
+              className={`bg-primary flex items-start gap-1 rounded-2xl border px-4 py-3.5 md:px-10 md:py-6 ${
+                i === 2 ? 'h-48 md:h-56 lg:h-60 relative' : 'lg:max-h-52'
+              }`}
             >
               <Img
                 src={'/public/assets/images/' + card.icon}
@@ -32,12 +34,17 @@ export default function HowTo({ className, ...props }: HowToProps) {
               <div>
                 <Text variant="lg/default/default">{card.label}</Text>
                 <Text className="lg:text-2xl">{card.text}</Text>
-                {i === 2 && 
-                <div className=''>
+                {i === 2 && (
+                  <div className="absolute bottom-4 lg:bottom-6 md:w-8/12 lg:w-9/12 hidden sm:block">
+                    <PieClipboardInput />
+                  </div>
+                )}
+              </div>
+              {i === 2 && (
+                <div className="absolute bottom-4 block sm:hidden w-11/12">
                   <PieClipboardInput />
                 </div>
-                }
-              </div>
+              )}
             </div>
           ))}
         </div>
