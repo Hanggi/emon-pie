@@ -13,7 +13,7 @@ const PieClipboardInput: React.FC = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-between w-full bg-[#ffdd64] text-black border border-primary rounded-full h-[50px] px-6">
+    <div className="relative flex items-center justify-between w-full bg-[#ffdd64] text-black rounded-full h-[50px] px-6 border border-black">
       <span className="text-lg sm:text-2xl">
         捐赠地址：<span className="opacity-80">0x....</span>
       </span>

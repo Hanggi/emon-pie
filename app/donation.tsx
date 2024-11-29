@@ -30,11 +30,11 @@ export default function Donation({ className, ...props }: DonationProps) {
             />
           </div>
           <div className="flex flex-col gap-5 items-center text-center">
-            <div className="flex items-center mb-8">
-              <span className="text-primary text-[120px] leading-3 md:text-[180px]">
+            <div className="flex items-center sm:mb-8">
+              <span className="text-primary text-[120px] leading-3 md:text-[180px] text-stroke">
                 100
               </span>
-              <span className="text-primary text-[40px] md:text-[50px] mt-6">
+              <span className="text-primary text-[40px] md:text-[50px] mt-6 text-stroke">
                 亿
               </span>
             </div>
@@ -43,12 +43,12 @@ export default function Donation({ className, ...props }: DonationProps) {
             </Text>
             <ProgressBar progress={30} label="30亿" />
             <div className="w-[319px] sm:w-[631px]">
-              <Text variant="sm/default/white">
+              <p className='text-[16px] sm:text-[24px] text-white'>
                 凡是捐赠的用户共同瓜分100亿PIE。
-              </Text>
-              <Text variant="sm/default/white">
+              </p>
+              <p className='text-[16px] sm:text-[24px] text-white'>
                 捐赠时间：2024年12月1日3点14分开始-2024年12月7日3点14分截止。
-              </Text>
+              </p>
             </div>
             <ClipboardInput />
             <div className="w-[380px] px-10 md:px-0">

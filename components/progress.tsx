@@ -24,10 +24,10 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, label }) => {
           animate={{ width: isInView ? `${progress}%` : '20%' }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         >
-          <span className="text-black font-bold text-lg sm:text-2xl absolute right-3">
+          <span className="text-black font-bold text-lg sm:text-2xl absolute right-1 sm:right-3">
             {label}
           </span>
-          <span className="absolute left-6 text-yellow-600 opacity-50 text-lg scale-150 tracking-[3px]">
+          <span className="absolute left-5 sm:left-6 text-yellow-600 opacity-50 text-xs sm:text-lg scale-150 tracking-[2px] sm:tracking-[3px]">
             {'>'}
             {'>'}
             {'>'}
