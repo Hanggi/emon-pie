@@ -14,7 +14,6 @@ import { Button } from './ui/button';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // #note
   return (
     <Motion
       initial={{ y: '-90%' }}
@@ -41,14 +40,14 @@ export default function Navbar() {
           </div>
         </div>
         <NavContent />
-        <div className='flex items-center justify-between'>
+        <div className="flex items-center justify-between">
           <Button>购买</Button>
           <Button variant="default/ghost" className="max-md:hidden">
             English/中文
           </Button>
         </div>
       </nav>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMenuOpen && <NavContentMob setIsMenuOpen={setIsMenuOpen} />}
       </AnimatePresence>
     </Motion>
@@ -73,10 +72,8 @@ const NavContent = () => {
 };
 
 const NavContentMob = ({ setIsMenuOpen }: { setIsMenuOpen: Function }) => {
-  // #note
-
   return (
-    <div>
+    <>
       <Motion
         key="mobile-nav"
         as="div"
@@ -84,16 +81,16 @@ const NavContentMob = ({ setIsMenuOpen }: { setIsMenuOpen: Function }) => {
         animate={{ x: 0 }}
         exit={{ x: '-100%' }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-y-0 left-0 w-4/5 md:w-3/5 min-h-screen bg-[#A45AFFF2]/95 pt-6 z-50 flex flex-col gap-6 text-white"
+        className="fixed inset-y-0 left-0 z-50 flex min-h-screen w-4/5 flex-col gap-6 bg-[#A45AFFF2]/95 pt-6 text-white md:w-3/5"
       >
         {/* Close Button */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/20">
+        <div className="flex items-center justify-between border-b border-white/20 pb-6">
           <Brand className="pl-6" />
           <div className="pr-6">
             <Icons.x
               onClick={() => setIsMenuOpen(false)}
               size={36}
-              className="text-white cursor-pointer"
+              className="cursor-pointer text-white"
             />
           </div>
         </div>
@@ -102,10 +99,10 @@ const NavContentMob = ({ setIsMenuOpen }: { setIsMenuOpen: Function }) => {
         <ul className="flex flex-col gap-6 px-6">
           {siteConfig.nav.map((_) => (
             <li key={_.title}>
-              <h3 className="capitalize text-2xl border-b pb-3 border-white/20">
+              <h3 className="border-b border-white/20 pb-3 text-2xl capitalize">
                 <Link
                   href={_.href}
-                  className="hover:border-b-[3px] border-white pb-4"
+                  className="border-white pb-4 hover:border-b-[3px]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {_.title}
@@ -123,9 +120,9 @@ const NavContentMob = ({ setIsMenuOpen }: { setIsMenuOpen: Function }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-0 bg-black/40 min-h-screen z-40"
+        className="fixed inset-0 z-40 min-h-screen bg-black/40"
         onClick={() => setIsMenuOpen(false)}
       />
-    </div>
+    </>
   );
 };
