@@ -1,14 +1,12 @@
-import About from './about';
-import Chart from './chart';
-import Claim from './claim';
-import Donation from './donation';
-import Header from './header';
-import HowTo from './how-to';
-import Map from './map';
-import Miner from './miner';
-// import Model from './model';
-import Pledge from './pledge';
-// import TokenModel from './token-model';
+import About from './_components/about';
+import Chart from './_components/chart';
+import Claim from './_components/claim';
+import Donation from './_components/donation';
+import Header from './_components/header';
+import HowTo from './_components/how-to';
+import Map from './_components/map';
+import Miner from './_components/miner';
+import Pledge from './_components/pledge';
 
 export default async function IndexPage() {
   return (
@@ -18,11 +16,11 @@ export default async function IndexPage() {
       <HowTo id="如何购买" />
       <Claim id="领取空投" />
       <Pledge id="质押挖矿" />
-      <Donation id='集体捐赠'/>
+      <Donation id="集体捐赠" />
       {/* <TokenModel id="代币模型" /> */}
-      <Miner id='NFT挖矿'/>
+      <Miner id="NFT挖矿" />
       {/* <Model id='代币模型'/> */}
-      <Chart id="代币模型"/>
+      <Chart id="代币模型" />
       <Map id="路线图" />
     </>
   );
