@@ -14,7 +14,6 @@ import { Button } from './ui/button';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // #note
   return (
     <Motion
       initial={{ y: '-90%' }}
@@ -41,12 +40,14 @@ export default function Navbar() {
           </div>
         </div>
         <NavContent />
-        <Button>购买</Button>
-        <Button variant="default/ghost" className="max-md:hidden">
-          English/中文
-        </Button>
+        <div className="flex items-center justify-between">
+          <Button>购买</Button>
+          <Button variant="default/ghost" className="max-md:hidden">
+            English/中文
+          </Button>
+        </div>
       </nav>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMenuOpen && <NavContentMob setIsMenuOpen={setIsMenuOpen} />}
       </AnimatePresence>
     </Motion>
@@ -71,26 +72,57 @@ const NavContent = () => {
 };
 
 const NavContentMob = ({ setIsMenuOpen }: { setIsMenuOpen: Function }) => {
-  // #note
-
   return (
-    <div>
+    <>
       <Motion
-        key={'header'}
-        as={'ul'}
-        initial="left"
-        animate="visible"
-        exit={'right'}
-        className="bg-primary absolute inset-x-0 mx-2 flex flex-col items-start gap-4 rounded-xl p-5 shadow-xl lg:hidden"
+        key="mobile-nav"
+        as="div"
+        initial={{ x: '-100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '-100%' }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-y-0 left-0 z-50 flex min-h-screen w-4/5 flex-col gap-6 bg-[#A45AFFF2]/95 pt-6 text-white md:w-3/5"
       >
-        {siteConfig.nav.map((_) => (
-          <li onClick={() => setIsMenuOpen(false)} key={_.title}>
-            <h3 className="hover:text-background capitalize">
-              <Link href={_.href}>{_.title}</Link>
-            </h3>
-          </li>
-        ))}
+        {/* Close Button */}
+        <div className="flex items-center justify-between border-b border-white/20 pb-6">
+          <Brand className="pl-6" />
+          <div className="pr-6">
+            <Icons.x
+              onClick={() => setIsMenuOpen(false)}
+              size={36}
+              className="cursor-pointer text-white"
+            />
+          </div>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className="flex flex-col gap-6 px-6">
+          {siteConfig.nav.map((_) => (
+            <li key={_.title}>
+              <h3 className="border-b border-white/20 pb-3 text-2xl capitalize">
+                <Link
+                  href={_.href}
+                  className="border-white pb-4 hover:border-b-[3px]"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {_.title}
+                </Link>
+              </h3>
+            </li>
+          ))}
+        </ul>
       </Motion>
-    </div>
+
+      {/* Semi-Transparent Background */}
+      <Motion
+        key="overlay"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-40 min-h-screen bg-black/40"
+        onClick={() => setIsMenuOpen(false)}
+      />
+    </>
   );
 };

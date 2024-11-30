@@ -11,6 +11,7 @@ interface MapProps extends HTMLAttributes<HTMLDivElement> {}
 export default function Map({ className, ...props }: MapProps) {
   return (
     <>
+    <Images.hr reverse />
       <div className={cn('container lg:mt-12', className, {})} {...props}>
         <div className="-mb-1 flex md:-mb-5 md:gap-14 md:pr-12 lg:gap-20">
           {images.map((item, i) => (
@@ -99,14 +100,14 @@ const images = [
 const texts = [
   {
     label: '第一阶段',
-    text: '发射\nCoinmarket上架记录\n3000+持有者',
+    text: '发射\nCoinmarket上架记录\n10K+持有者',
   },
   {
     label: '第二阶段',
-    text: '建立PIE社区\n在推特上增加PIE力量\n10K+持有者\n封装到其他公链上',
+    text: '建立PIE社区\n在推特上增加PIE力量\n50K+持有者',
   },
   {
     label: '第三阶段',
-    text: '开启NFT质押挖矿\n100K+持有者\n登录中心化交易所\n封装到PICHAIN上',
+    text: '登录中心化交易所\n100K+持有者\n跨链到其他公链',
   },
 ];
