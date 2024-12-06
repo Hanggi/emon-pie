@@ -24,9 +24,7 @@ export default function Header({ className, ...props }: HeaderProps) {
         </div>
         <div className="bg-primary relative -mt-14  rounded-full px-4 py-1 md:-mt-32 md:px-8 md:py-4 lg:-mt-64 ">
           <Icons.brow className="absolute -left-4 top-0 max-lg:scale-75 max-md:scale-50 " />
-          <Text className="max-w-[70%] ">
-            PIE是Pinetwork开源之前的第一个Pi MEME COIN，真正的PIE！
-          </Text>
+          <Text className="max-w-[70%] ">PIE让 Pinetwork 更伟大！</Text>
         </div>
         <div className="mt-8 grid grid-cols-3 gap-x-1 gap-y-4 md:mt-20 lg:mt-12 lg:max-w-[60%]">
           {socials.map((el) => (
