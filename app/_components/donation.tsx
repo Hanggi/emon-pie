@@ -23,18 +23,18 @@ export default function Donation({ className, ...props }: DonationProps) {
       >
         <Text intent={'heading'}>集体捐赠</Text>
         <div className="relative">
-          <div className="absolute left-10 -top-5">
+          <div className="absolute -top-5 left-10">
             <Img
               src="/public/assets/images/white-cloud.png"
-              className="h-16 md:h-24 w-16 md:w-24"
+              className="size-16 md:size-24"
             />
           </div>
-          <div className="flex flex-col gap-5 items-center text-center">
+          <div className="flex flex-col items-center gap-5 text-center">
             <div className="flex items-center sm:mb-8">
-              <span className="text-primary text-[120px] leading-3 md:text-[180px] text-stroke">
+              <span className="text-primary text-stroke text-[120px] leading-3 md:text-[180px]">
                 100
               </span>
-              <span className="text-primary text-[40px] md:text-[50px] mt-6 text-stroke">
+              <span className="text-primary text-stroke mt-6 text-[40px] md:text-[50px]">
                 亿
               </span>
             </div>
@@ -43,11 +43,11 @@ export default function Donation({ className, ...props }: DonationProps) {
             </Text>
             <ProgressBar progress={30} label="30亿" />
             <div className="w-[319px] sm:w-[631px]">
-              <p className='text-[16px] sm:text-[24px] text-white'>
+              <p className="text-[16px] text-white sm:text-[24px]">
                 凡是捐赠的用户共同瓜分100亿PIE。
               </p>
-              <p className='text-[16px] sm:text-[24px] text-white'>
-                捐赠时间：2024年12月1日3点14分开始-2024年12月7日3点14分截止。
+              <p className="text-[16px] text-white sm:text-[24px]">
+                2024年12月10日3点14分开始-2024年12月17日3点14分截止
               </p>
             </div>
             <ClipboardInput />
@@ -57,33 +57,42 @@ export default function Donation({ className, ...props }: DonationProps) {
               </Button>
             </div>
           </div>
-          <div className="absolute right-0 md:-right-24 top-0 flex flex-col items-center">
+          <div className="absolute right-0 top-0 flex flex-col items-center md:-right-24">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-16 sm:h-24 w-16 sm:w-24"
+              className="size-16 sm:size-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
+            <Img
+              src="/public/assets/images/box.png"
+              className="size-12 sm:size-16"
+            />
           </div>
-          <div className="absolute -right-10 md:-right-64 top-24 flex flex-col items-center opacity-50">
+          <div className="absolute -right-10 top-24 flex flex-col items-center opacity-50 md:-right-64">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-16 sm:h-24 w-16 sm:w-24"
+              className="size-16 sm:size-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
+            <Img
+              src="/public/assets/images/box.png"
+              className="size-12 sm:size-16"
+            />
           </div>
 
-          <div className="absolute left-0 md:-left-24 -top-16 flex flex-col items-center opacity-50">
+          <div className="absolute -top-16 left-0 flex flex-col items-center opacity-50 md:-left-24">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-16 sm:h-24 w-16 sm:w-24"
+              className="size-16 sm:size-24"
             />
           </div>
-          <div className="absolute -left-10 md:-left-64 top-24 flex flex-col items-center">
+          <div className="absolute -left-10 top-24 flex flex-col items-center md:-left-64">
             <Img
               src="/public/assets/images/right-cloud.png"
-              className="h-16 sm:h-24 w-16 sm:w-24"
+              className="size-16 sm:size-24"
             />
-            <Img src="/public/assets/images/box.png" className="h-12 sm:h-16 w-12 sm:w-16" />
+            <Img
+              src="/public/assets/images/box.png"
+              className="size-12 sm:size-16"
+            />
           </div>
         </div>
       </div>
