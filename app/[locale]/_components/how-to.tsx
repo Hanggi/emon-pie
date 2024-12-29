@@ -24,8 +24,8 @@ export default function HowTo({ className, ...props }: HowToProps) {
             <div
               key={card.label}
               className={cn(
-                'bg-primary flex items-start gap-1 rounded-2xl border px-4 py-3.5 md:px-10 md:py-6',
-                i === 2 ? 'relative h-48 md:h-56 lg:h-60' : 'lg:max-h-52'
+                'bg-primary flex flex-col items-start gap-1 rounded-2xl border px-4 py-3.5 sm:flex-row md:px-10 md:py-6',
+                i === 2 ? 'relative h-64 md:h-56 lg:h-60' : 'lg:max-h-52'
               )}
             >
               <Img
