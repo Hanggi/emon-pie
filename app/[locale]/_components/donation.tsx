@@ -47,7 +47,7 @@ export default function Donation({ className, ...props }: DonationProps) {
                 凡是捐赠的用户共同瓜分100亿PIE。
               </p>
               <p className="text-[16px] text-white sm:text-[24px]">
-                2024年12月10日3点14分开始-2024年12月17日3点14分截止
+                2025年1月1日3点14分开始-2025年1月10日3点14分截止
               </p>
             </div>
             <ClipboardInput />
