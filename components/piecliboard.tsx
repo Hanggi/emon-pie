@@ -13,13 +13,16 @@ const PieClipboardInput: React.FC = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-between w-full bg-[#ffdd64] text-black rounded-full h-[50px] px-6 border border-black">
+    <div className="relative flex h-[50px] w-full items-center justify-between rounded-full border border-black bg-[#ffdd64] px-6 text-black">
       <span className="text-lg sm:text-2xl">
-        捐赠地址：<span className="opacity-80">0x....</span>
+        捐赠地址：
+        <span className="opacity-80">
+          FMXsEZ1N8y7wKDL45RBNZKkzU8WVkWt3u8bQ92SKe7G2
+        </span>
       </span>
 
       <div className="flex items-center">
-        <div className="h-6 w-[1px] bg-primary mx-3"></div>
+        <div className="bg-primary mx-3 h-6 w-px"></div>
 
         <button
           onClick={handleCopy}
@@ -45,7 +48,7 @@ const PieClipboardInput: React.FC = () => {
       </div>
 
       {copied && (
-        <span className="absolute top-[-30px] right-4 bg-[#ffdd64] text-black px-2 py-1 rounded">
+        <span className="absolute right-4 top-[-30px] rounded bg-[#ffdd64] px-2 py-1 text-black">
           Copied!
         </span>
       )}

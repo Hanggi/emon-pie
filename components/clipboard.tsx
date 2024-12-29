@@ -17,7 +17,10 @@ const ClipboardInput: React.FC = () => {
       className={`relative flex items-center justify-between w-[320px] sm:w-[496px] bg-[#ad6aff] text-primary border border-primary rounded-full h-[55px] px-6`}
     >
       <span className="text-lg sm:text-2xl">
-        捐赠地址：<span className="opacity-80">0x....</span>
+        捐赠地址：
+        <span className="opacity-80">
+          FMXsEZ1N8y7wKDL45RBNZKkzU8WVkWt3u8bQ92SKe7G2
+        </span>
       </span>
 
       <div className="flex items-center">
