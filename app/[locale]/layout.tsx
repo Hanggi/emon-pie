@@ -1,13 +1,18 @@
 import TransitionProvider from '@/context/transition-provider';
 
 import '@/styles/globals.css';
+
 import { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
+import i18nConfig from '@/i18nConfig';
 
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/footer';
+import TranslationsProvider from '@/components/TranslationsProvider';
+
+import initTranslations from '../i18n';
 
 const GoToTop = dynamic(() => import('@/components/goto-top'));
 const Navbar = dynamic(() => import('@/components/navbar'));
@@ -34,9 +39,20 @@ export const viewport: Viewport = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const locale = (await params).locale;
+  const { t, options } = await initTranslations(locale, ['home']);
+
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -49,14 +65,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <div className="flex-1">
-              <TransitionProvider>{children}</TransitionProvider>
+          <TranslationsProvider
+            locale={locale}
+            namespaces={options.ns as string[]}
+          >
+            <div className="relative flex min-h-screen flex-col">
+              <Navbar />
+              <div className="flex-1">
+                <TransitionProvider>{children}</TransitionProvider>
+              </div>
             </div>
-          </div>
-          <GoToTop />
-          <Footer />
+            <GoToTop />
+            <Footer />
+          </TranslationsProvider>
         </body>
       </html>
     </>

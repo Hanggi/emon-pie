@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { siteConfig } from '@/config/site';
 
@@ -14,6 +15,7 @@ import { Button } from './ui/button';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <Motion
       initial={{ y: '-90%' }}
@@ -55,14 +57,19 @@ export default function Navbar() {
 }
 
 const NavContent = () => {
+  const { t } = useTranslation(['common']);
   const path = usePathname();
+
   return (
     <>
       <ul className="ml-20 flex items-center gap-6 max-lg:hidden ">
-        {siteConfig.nav.map((_) => (
-          <li key={_.title} className="text-primary relative hover:text-white">
+        {siteConfig.nav.map((item) => (
+          <li
+            key={item.title}
+            className="text-primary relative hover:text-white"
+          >
             <h3 className="capitalize">
-              <Link href={_.href}>{_.title}</Link>
+              <Link href={item.href}>{t(`common:${item.key}`)}</Link>
             </h3>
           </li>
         ))}
