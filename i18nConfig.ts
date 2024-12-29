@@ -1,7 +1,7 @@
 const i18nConfig = {
-  locales: ["en", "zh-CN"],
-  defaultLocale: "en",
-  routingStrategy: "dynamicSegment",
+  locales: ['en', 'zh-CN'],
+  defaultLocale: 'en',
+  routingStrategy: 'dynamicSegment',
   prefixDefault: false,
   // localeDetector: false,
 };
