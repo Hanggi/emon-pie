@@ -14,7 +14,7 @@ export default async function IndexPage() {
       <Header id="首页" />
       <About id="项目介绍" />
       <HowTo id="如何购买" />
-      <Pledge id="质押挖矿" />
+      {/* <Pledge id="质押挖矿" /> */}
       <Donation id="集体捐赠" />
       {/* <TokenModel id="代币模型" /> */}
       <Miner id="NFT挖矿" />
