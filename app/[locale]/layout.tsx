@@ -4,13 +4,13 @@ import '@/styles/globals.css';
 
 import { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
+import TranslationsProvider from '@/context/TranslationsProvider';
 import i18nConfig from '@/i18nConfig';
 
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/footer';
-import TranslationsProvider from '@/components/TranslationsProvider';
 
 import initTranslations from '../i18n';
 

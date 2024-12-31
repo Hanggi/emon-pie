@@ -1,11 +1,10 @@
-"use client";
+'use client';
 
-import { i18n as I18N } from "i18next";
+import { ReactNode, useEffect, useState } from 'react';
+import { i18n as I18N } from 'i18next';
+import { I18nextProvider } from 'react-i18next';
 
-import { ReactNode, useEffect, useState } from "react";
-import { I18nextProvider } from "react-i18next";
-
-import initTranslations from "../app/i18n";
+import initTranslations from '../app/i18n';
 
 let i18n: I18N;
 
@@ -25,7 +24,7 @@ export default function TranslationsProvider({
       if (!i18n) {
         const newInstance = (await initTranslations(
           locale,
-          namespaces,
+          namespaces
         )) as I18N;
         i18n = newInstance;
         setInstance(newInstance);
