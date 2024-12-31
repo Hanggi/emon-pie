@@ -64,24 +64,4 @@ const socials = [
     icon: 'ave.svg',
     href: '',
   },
-  // {
-  //   label: 'Dextools',
-  //   icon: 'dextool.svg',
-  //   href: '',
-  // },
-  // {
-  //   label: 'Etherscan',
-  //   icon: 'etherscan.svg',
-  //   href: '',
-  // },
-  // {
-  //   label: 'Coinmarketcap',
-  //   icon: 'coinmarke.svg',
-  //   href: '',
-  // },
-  // {
-  //   label: 'New Crypto Space',
-  //   icon: 'crypto-space.svg',
-  //   href: '',
-  // },
 ];
