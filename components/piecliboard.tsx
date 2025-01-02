@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const PieClipboardInput: React.FC = () => {
   const [copied, setCopied] = useState(false);
-
+  const { t } = useTranslation('common');
   const handleCopy = () => {
     navigator.clipboard.writeText('0x....');
     setCopied(true);
@@ -15,7 +16,7 @@ const PieClipboardInput: React.FC = () => {
   return (
     <div className="relative flex h-[50px] w-full items-center justify-between rounded-full border border-black bg-[#ffdd64] px-6 text-black">
       <span className="text-lg sm:text-2xl">
-        捐赠地址：
+        {t('address')}：
         <span className="opacity-80">
           FMXsEZ1N8y7wKDL45RBNZKkzU8WVkWt3u8bQ92SKe7G2
         </span>

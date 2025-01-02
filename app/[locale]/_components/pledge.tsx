@@ -1,4 +1,7 @@
+'use client';
+
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -9,6 +12,7 @@ import { Images } from '@/components/images';
 interface PledgeProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Pledge({ className, ...props }: PledgeProps) {
+  const { t } = useTranslation('home');
   return (
     <>
       <div
@@ -19,10 +23,16 @@ export default function Pledge({ className, ...props }: PledgeProps) {
         )}
         {...props}
       >
-        <Text intent={'heading'}>NFT质押挖矿</Text>
-        <Button variant="lg/outline">即将开启</Button>
+        <Text intent={'heading'}>{t('title')}</Text>
+        <Button variant="lg/outline">{t('action')}</Button>
         <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 lg:flex lg:w-full lg:justify-between">
-          {cards.map((card) => (
+          {(
+            t('howTo.options', { returnObjects: true }) as {
+              label: string;
+              tag: string;
+              action: string;
+            }[]
+          ).map((card) => (
             <div
               key={card.tag}
               className="flex flex-col items-center gap-2.5 rounded-2xl bg-black/10 p-3.5 lg:p-5"
@@ -41,7 +51,7 @@ export default function Pledge({ className, ...props }: PledgeProps) {
                 {card.label}
               </Text>
               <Button className="rounded-[10px] border max-sm:text-xs" full>
-                解除质押，领取奖励
+                {card.action}
               </Button>
             </div>
           ))}
@@ -51,22 +61,3 @@ export default function Pledge({ className, ...props }: PledgeProps) {
     </>
   );
 }
-
-const cards = [
-  {
-    label: '每日领取N个PIE',
-    tag: '活期',
-  },
-  {
-    label: '每日领取M个PIE',
-    tag: '30天',
-  },
-  {
-    label: '每日领取X个PIE',
-    tag: '60天',
-  },
-  {
-    label: '每日领取Y个PIE',
-    tag: '90天',
-  },
-];

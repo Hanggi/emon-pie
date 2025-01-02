@@ -7,5 +7,6 @@
     "tokenomics": "代币模型",
     "roadmap": "路线图"
   },
-  "action": { "buy": "购买" }
+  "action": { "buy": "购买" },
+  "address": "捐赠地址"
 }
