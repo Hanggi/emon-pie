@@ -50,13 +50,12 @@ export default function Navbar() {
         <NavContent />
         <div className="flex items-center justify-between">
           <Button>购买</Button>
-          <Select>
+          <Select
+            onValueChange={(v) => changeLanguage(v)}
+            defaultValue={i18n.language}
+          >
             <SelectTrigger>
-              <Button
-                variant="default/ghost"
-                onClick={() => changeLanguage('zh-CN')}
-                className="max-md:hidden"
-              >
+              <Button variant="default/ghost" className="max-md:hidden">
                 English/中文
               </Button>
             </SelectTrigger>
