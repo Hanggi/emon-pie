@@ -1,10 +1,16 @@
 {
   "nav": {
     "home": "Home",
-    "introduction": "Introdution",
-    "howToBuy": "How to buy",
+    "introduction": "Project Introduction",
+    "howToBuy": "How to Buy",
     "nftMining": "NFT Mining",
     "tokenomics": "Tokenomics",
     "roadmap": "Roadmap"
+  },
+  "action": { "buy": "Buy" },
+  "address": "Donation Address",
+  "footer": {
+    "title": "PIE Meme Power",
+    "description": "PIE may be a meme coin with no intrinsic value or expected financial returns. There might be no formal team or roadmap. This coin might be completely useless and just for fun. It could just be to urge Pinetwork to speed up."
   }
 }

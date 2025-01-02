@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "header": "If you haven't got Picoi yet, have some PIE first! After all, it's just a piece of cake!",
+    "subheader": "PIE makes Pinetwork greater!"
+  },
+  "about": {
+    "title": "Project Introduction",
+    "points": [
+      "You've been mining Bitcoin for over 3 years and seem tired of the long wait and the journey of great vision. Let's have a piece of our own PIE.",
+      "PIE will make Pinetwork and MEME greater!",
+      "PIE always supports Pinetwork and always belongs to the people's cryptocurrency!",
+      "Born under the driving force of tens of millions of pioneers worldwide, PIE shows you the direction and leads you to greatness!"
+    ]
+  },
+  "howTo": {
+    "title": "How to Buy",
+    "options": [
+      {
+        "label": "Step 1: Create Wallet",
+        "icon": "wallet.svg",
+        "text": "Download OKX Wallet or other crypto wallet for free from the app store or wallet website. For PC users, download the Google Chrome extension from okx.com."
+      },
+      {
+        "label": "Step 2: Get SOL",
+        "icon": "sol.png",
+        "text": "Store some SOL in the wallet to exchange for PIE. If you don't have any SOL, you can buy it directly on OKX, transfer it from another wallet, or buy it on another exchange and send it to your wallet."
+      },
+      {
+        "label": "Step 3: Use OKX Wallet",
+        "icon": "pie.svg",
+        "text": "You can directly exchange SOL for PIE using the 'Exchange' button in the wallet. Reminder: Be aware of transaction fees and slippage as on-chain transaction fees fluctuate."
+      }
+    ]
+  },
+  "pledge": {
+    "title": "How to Buy",
+    "action": "Coming Soon",
+    "options": [
+      {
+        "label": "Daily Claim N PIE",
+        "action": "Unstake and Claim Rewards",
+        "tag": "Current"
+      },
+      {
+        "label": "Daily Claim M PIE",
+        "action": "Unstake and Claim Rewards",
+        "tag": "30 Days"
+      },
+      {
+        "label": "Daily Claim X PIE",
+        "action": "Unstake and Claim Rewards",
+        "tag": "60 Days"
+      },
+      {
+        "label": "Daily Claim Y PIE",
+        "action": "Unstake and Claim Rewards",
+        "tag": "90 Days"
+      }
+    ]
+  },
+  "donation": {
+    "title": "Collective Donation",
+    "currency": "Billion",
+    "details": {
+      "label": "Total PIE Donation Pool",
+      "description": "Users who donate will share 10 billion PIE.",
+      "deadline": "From January 1, 2025, 3:14 AM to January 10, 2025, 3:14 AM"
+    },
+    "progress": "3 Billion",
+    "action": "Link Wallet"
+  },
+  "miner": {
+    "title": "NFT Mining",
+    "action": "Link Wallet",
+    "subtitle": "Note: Can be withdrawn after 10 days, if not withdrawn, mining continues.",
+    "nft": {
+      "subtitle": "NFT Collection",
+      "available_quantity": "Available Quantity",
+      "quantity": "10",
+      "actions": {
+        "start_mining": "Start Mining",
+        "claim_rewards": "Claim Tokens"
+      }
+    }
+  },
+  "chart": {
+    "title": "Tokenomics",
+    "data": [
+      { "label": "Donation 10 Billion", "color": "#F4436D" },
+      { "label": "Airdrop 5 Billion", "color": "#C2F443" },
+      { "label": "Trading Pool 5 Billion", "color": "#BB43F4" },
+      { "label": "Mining 65 Billion", "color": "#F48B42" },
+      { "label": "Team Reserve 5 Billion", "color": "#27D06B" },
+      {
+        "label": "10 Billion unlocks on June 28, 2025 and cross-chain to Pichain",
+        "color": "#438AF5"
+      }
+    ]
+  },
+  "map": {
+    "roadmap": "Roadmap",
+    "texts": [
+      {
+        "label": "Phase 1",
+        "text": "Launch\nListing on Coinmarket\n10K+ Holders"
+      },
+      {
+        "label": "Phase 2",
+        "text": "Build PIE Community\nIncrease PIE Power on Twitter\n50K+ Holders"
+      },
+      {
+        "label": "Phase 3",
+        "text": "List on Centralized Exchanges\n100K+ Holders\nCross-chain to Other Public Chains"
+      }
+    ]
+  }
+}
