@@ -1,4 +1,7 @@
+'use client';
+
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 import Img from '@/components/ui/img';
@@ -8,6 +11,7 @@ import { Images } from '@/components/images';
 interface AboutProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function About({ className, ...props }: AboutProps) {
+  const { t } = useTranslation('home');
   return (
     <>
       <div
@@ -24,21 +28,14 @@ export default function About({ className, ...props }: AboutProps) {
         />
         <div>
           <Text className="mb-2 " intent={'title'}>
-            项目介绍
+            {t('about.title')}
           </Text>
           <ul className="list-disc marker:text-white lg:space-y-2">
-            <Text as={'li'} variant="sm/default/white">
-              你已经挖掘了多年的Picoin，你似乎厌倦了这样漫长的等待和伟大愿景的旅途，我只不过想拥有一点属于自己的PIE。
-            </Text>
-            <Text as={'li'} variant="sm/default/white">
-              PIE会让Pinetwork和MEME更伟大!
-            </Text>
-            <Text as={'li'} variant="sm/default/white">
-              PIE永远支持Pinetwork，永远属于人民的加密硬币!
-            </Text>
-            <Text as={'li'} variant="sm/default/white">
-              在全球数千万先锋的推动力量下诞生，PIE为你指明方向，向伟大前进！
-            </Text>
+            {Array.from({ length: 4 }).map((_, idx) => (
+              <Text key={idx} as={'li'} variant="sm/default/white">
+                {t(`about.points.${idx}`)}
+              </Text>
+            ))}
           </ul>
         </div>
       </div>

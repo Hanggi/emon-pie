@@ -6,5 +6,6 @@
     "nftMining": "NFT挖矿",
     "tokenomics": "代币模型",
     "roadmap": "路线图"
-  }
+  },
+  "action": { "buy": "购买" }
 }

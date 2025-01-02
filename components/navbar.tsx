@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +16,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger } from './ui/select';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation(['common']);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -49,7 +49,7 @@ export default function Navbar() {
         </div>
         <NavContent />
         <div className="flex items-center justify-between">
-          <Button>购买</Button>
+          <Button>{t('action.buy')}</Button>
           <Select
             onValueChange={(v) => changeLanguage(v)}
             defaultValue={i18n.language}

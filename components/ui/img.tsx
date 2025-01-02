@@ -1,4 +1,3 @@
-import { readFile } from 'fs/promises';
 import { HTMLAttributes } from 'react';
 import Image from 'next/image';
 
@@ -15,14 +14,12 @@ export default async function Img({
   imageClassName,
   ...props
 }: ImgProps) {
-  let buffer, src;
+  let src;
 
   if (props.src.startsWith('http')) {
     const res = await fetch(props.src);
-    buffer = await res.arrayBuffer();
     src = props.src;
   } else {
-    buffer = await readFile('.' + props.src);
     src = props.src.replace('/public/', '/');
   }
 
