@@ -1,5 +1,3 @@
-import i18next from 'i18next';
-
 import About from './_components/about';
 import Chart from './_components/chart';
 import Donation from './_components/donation';
@@ -10,8 +8,6 @@ import Miner from './_components/miner';
 import Pledge from './_components/pledge';
 
 export default async function IndexPage() {
-  const { t } = i18next;
-  console.info('⚡[page.tsx:14] t:', t('common'));
   return (
     <>
       <Header id="首页" />

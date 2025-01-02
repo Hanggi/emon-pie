@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +15,11 @@ import { Button } from './ui/button';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { i18n, t } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <Motion
@@ -44,7 +49,11 @@ export default function Navbar() {
         <NavContent />
         <div className="flex items-center justify-between">
           <Button>购买</Button>
-          <Button variant="default/ghost" className="max-md:hidden">
+          <Button
+            variant="default/ghost"
+            onClick={() => changeLanguage('zh-CN')}
+            className="max-md:hidden"
+          >
             English/中文
           </Button>
         </div>
