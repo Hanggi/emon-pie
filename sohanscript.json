@@ -1,8 +1,8 @@
 {
   "$schema": "https://sohanjs.web.app/draft/next/schema.json",
-  "packageManager": "bun --bun",
+  "packageManager": "yarn",
   "cwd": "$NVIM_CWD",
   "commands": {
-    "dev": "npm run dev"
+    "dev": "yarn dev"
   }
 }
