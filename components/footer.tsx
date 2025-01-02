@@ -1,5 +1,8 @@
+'use client';
+
 import { HTMLAttributes } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 
@@ -10,6 +13,7 @@ import { Text } from './ui/text';
 interface FooterProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Footer({ className, ...props }: FooterProps) {
+  const { t } = useTranslation('common');
   return (
     <>
       <div
@@ -24,7 +28,7 @@ export default function Footer({ className, ...props }: FooterProps) {
           src="/public/assets/images/pie-bg.svg"
           className="absolute inset-0"
         />
-        <Text intent={'heading'}>PIE 模因力量</Text>
+        <Text intent={'heading'}>{t('footer.title')}</Text>
         <Brand className="flex-col md:mt-8" />
         <div className="flex items-center ">
           <Img src="/public/assets/images/insect-happy.svg" className="w-52" />
@@ -32,10 +36,7 @@ export default function Footer({ className, ...props }: FooterProps) {
             variant="default/default/white"
             className="max-w-sm text-center leading-loose md:max-w-lg md:text-2xl"
           >
-            PIE可能是一种没有内在价值或财务回报预期的模因硬币。
-            可能没有正式的团队或路线图。
-            这枚硬币可能完全没用，可能只是为了娱乐。
-            可能只是为了催促Pinetwork能加快速度。
+            {t('footer.description')}
           </Text>
           <Img src="/public/assets/images/bottle-wow.svg" className="w-52" />
         </div>

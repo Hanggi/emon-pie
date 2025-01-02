@@ -8,5 +8,9 @@
     "roadmap": "路线图"
   },
   "action": { "buy": "购买" },
-  "address": "捐赠地址"
+  "address": "捐赠地址",
+  "footer": {
+    "title": "PIE 模因力量",
+    "description": "PIE可能是一种没有内在价值或财务回报预期的模因硬币。            可能没有正式的团队或路线图。            这枚硬币可能完全没用，可能只是为了娱乐。            可能只是为了催促Pinetwork能加快速度。"
+  }
 }
