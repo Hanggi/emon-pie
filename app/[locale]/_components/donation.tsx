@@ -41,7 +41,7 @@ export default function Donation({ className, ...props }: DonationProps) {
             <Text variant="sm/default/white" className="opacity-70">
               PIE捐赠池总币量
             </Text>
-            <ProgressBar progress={30} label="30亿" />
+            <ProgressBar progress={10} label="0.1亿" />
             <div className="w-[319px] sm:w-[631px]">
               <p className="text-[16px] text-white sm:text-[24px]">
                 凡是捐赠的用户共同瓜分100亿PIE。
