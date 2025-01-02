@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ClipboardInput: React.FC = () => {
+  const { t } = useTranslation('common');
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -14,17 +16,17 @@ const ClipboardInput: React.FC = () => {
 
   return (
     <div
-      className={`relative flex items-center justify-between w-[320px] sm:w-[496px] bg-[#ad6aff] text-primary border border-primary rounded-full h-[55px] px-6`}
+      className={`text-primary border-primary relative flex h-[55px] w-[320px] items-center justify-between rounded-full border bg-[#ad6aff] px-6 sm:w-[496px]`}
     >
       <span className="text-lg sm:text-2xl">
-        捐赠地址：
+        {t('address')}：
         <span className="opacity-80">
           FMXsEZ1N8y7wKDL45RBNZKkzU8WVkWt3u8bQ92SKe7G2
         </span>
       </span>
 
       <div className="flex items-center">
-        <div className="h-6 w-[1px] bg-primary mx-3"></div>
+        <div className="bg-primary mx-3 h-6 w-px"></div>
 
         <button
           onClick={handleCopy}
@@ -50,7 +52,7 @@ const ClipboardInput: React.FC = () => {
       </div>
 
       {copied && (
-        <span className="absolute top-[-30px] right-4 bg-primary text-black px-2 py-1 rounded">
+        <span className="bg-primary absolute right-4 top-[-30px] rounded px-2 py-1 text-black">
           Copied!
         </span>
       )}

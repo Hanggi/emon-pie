@@ -23,11 +23,11 @@ export default function Pledge({ className, ...props }: PledgeProps) {
         )}
         {...props}
       >
-        <Text intent={'heading'}>{t('title')}</Text>
-        <Button variant="lg/outline">{t('action')}</Button>
+        <Text intent={'heading'}>{t('pledge.title')}</Text>
+        <Button variant="lg/outline">{t('pledge.action')}</Button>
         <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 lg:flex lg:w-full lg:justify-between">
           {(
-            t('howTo.options', { returnObjects: true }) as {
+            t('pledge.options', { returnObjects: true }) as {
               label: string;
               tag: string;
               action: string;

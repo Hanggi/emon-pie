@@ -1,5 +1,8 @@
+'use client';
+
 import React, { HTMLAttributes } from 'react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 import Img from '@/components/ui/img';
@@ -7,20 +10,8 @@ import { Text } from '@/components/ui/text';
 
 interface ChartProps extends HTMLAttributes<HTMLDivElement> {}
 
-const data = [
-  { label: '募捐100亿', value: 100, color: '#F4436D' },
-  { label: '空投 50亿', value: 50, color: '#C2F443' },
-  { label: '交易池 50亿', value: 50, color: '#BB43F4' },
-  { label: '挖矿 650亿', value: 650, color: '#F48B42' },
-  { label: '项目方保留 50亿', value: 50, color: '#27D06B' },
-  {
-    label: '100亿于2025年6月28日后解锁并跨链到Pichain',
-    value: 100,
-    color: '#438AF5',
-  },
-];
-
 export default function Chart({ className, ...props }: ChartProps) {
+  const { t } = useTranslation('home');
   return (
     <>
       <div
@@ -30,11 +21,16 @@ export default function Chart({ className, ...props }: ChartProps) {
         )}
         {...props}
       >
-        <Text intent="heading">代币模型</Text>
+        <Text intent="heading">{t('chart.title')}</Text>
 
         {/* Legend Section */}
         <div className="mt-6 flex w-[380px] flex-wrap justify-center gap-x-5 gap-y-6 sm:w-[800px] sm:gap-x-10">
-          {data.map((entry, index) => (
+          {(
+            t('chart.data', { returnObjects: true }) as {
+              label: string;
+              color: string;
+            }[]
+          ).map((entry, index) => (
             <div key={index} className="flex items-center gap-2">
               <div
                 className="size-2 rounded-full border border-black sm:size-4"

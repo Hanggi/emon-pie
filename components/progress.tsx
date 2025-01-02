@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 interface ProgressBarProps {
   progress: number;
-  label: string; 
+  label: string;
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress, label }) => {
@@ -16,18 +16,18 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, label }) => {
     <div className="flex items-center justify-center">
       <div
         ref={ref}
-        className="relative w-[332px] sm:w-[500px] h-6 sm:h-9 bg-[#8348CC] rounded-full overflow-hidden"
+        className="relative h-6 w-[332px] overflow-hidden rounded-full bg-[#8348CC] sm:h-9 sm:w-[500px]"
       >
         <motion.div
-          className="absolute left-0 top-0 h-full bg-primary rounded-full flex items-center justify-center shadow-md border border-black"
+          className="bg-primary absolute left-0 top-0 flex h-full items-center justify-center rounded-full border border-black shadow-md"
           initial={{ width: '20%' }}
           animate={{ width: isInView ? `${progress}%` : '20%' }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         >
-          <span className="text-black font-bold text-lg sm:text-2xl absolute right-1 sm:right-3">
+          <span className="absolute right-1 text-lg font-bold text-black sm:right-3 sm:text-2xl">
             {label}
           </span>
-          <span className="absolute left-5 sm:left-6 text-yellow-600 opacity-50 text-xs sm:text-lg scale-150 tracking-[2px] sm:tracking-[3px]">
+          <span className="absolute left-5 scale-150 text-xs tracking-[2px] text-yellow-600 opacity-50 sm:left-6 sm:text-lg sm:tracking-[3px]">
             {'>'}
             {'>'}
             {'>'}

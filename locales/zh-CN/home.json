@@ -57,5 +57,61 @@
         "tag": "90天"
       }
     ]
+  },
+  "donation": {
+    "title": "集体捐赠",
+    "currency": "亿",
+    "details": {
+      "label": "PIE捐赠池总币量",
+      "description": "凡是捐赠的用户共同瓜分100亿PIE。",
+      "deadline": "2025年1月1日3点14分开始-2025年1月10日3点14分截止"
+    },
+    "progress": "30亿",
+    "action": "链接钱包"
+  },
+  "miner": {
+    "title": "NFT挖矿",
+    "action": "链接钱包",
+    "subtitle": "须知：10天后才能提取，如果不提取就继续挖掘。",
+    "nft": {
+      "subtitle": "NFT集合",
+      "available_quantity": "可提数量",
+      "quantity": "10",
+      "actions": {
+        "start_mining": "开始挖矿",
+        "claim_rewards": "提取代币"
+      }
+    }
+  },
+  "chart": {
+    "title": "代币模型",
+    "data": [
+      { "label": "募捐100亿", "color": "#F4436D" },
+      { "label": "空投 50亿", "color": "#C2F443" },
+      { "label": "交易池 50亿", "color": "#BB43F4" },
+      { "label": "挖矿 650亿", "color": "#F48B42" },
+      { "label": "项目方保留 50亿", "color": "#27D06B" },
+      {
+        "label": "100亿于2025年6月28日后解锁并跨链到Pichain",
+        "color": "#438AF5"
+      }
+    ]
+  },
+  "map": {
+    "roadmap": "路线图",
+    "texts": [
+      {
+        "label": "第一阶段",
+        "text": "发射\nCoinmarket上架记录\n10K+持有者"
+      },
+      {
+        "label": "第二阶段",
+        "text": "建立PIE社区\n在推特上增加PIE力量\n50K+持有者"
+      },
+      {
+        "label": "第三阶段",
+        "text": "登录中心化交易所\n100K+持有者\n跨链到其他公链"
+      }
+    ]
   }
 }

@@ -1,4 +1,7 @@
+'use client';
+
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -9,6 +12,7 @@ import { Images } from '@/components/images';
 interface MinerProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Miner({ className, ...props }: MinerProps) {
+  const { t } = useTranslation('home');
   return (
     <>
       <div
@@ -19,38 +23,46 @@ export default function Miner({ className, ...props }: MinerProps) {
         )}
         {...props}
       >
-        <Text intent={'heading'}>NFT挖矿</Text>
-        <p className="text-white/70 text-[14px] sm:text-[20px] sm:leading-[26px] font-[400] sm:mb-2">
-          须知：10天后才能提取，如果不提取就继续挖掘。
+        <Text intent={'heading'}>{t('miner.title')}</Text>
+        <p className="text-[14px] font-[400] text-white/70 sm:mb-2 sm:text-[20px] sm:leading-[26px]">
+          {t('miner.subtitle')}
         </p>
-        <Button variant="xl/outline" className='hidden sm:block'>链接钱包</Button>
-        <div className="mt-6 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full sm:w-fit lg:w-full">
+        <Button variant="xl/outline" className="hidden sm:block">
+          {t('miner.action')}
+        </Button>
+        <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:mt-12 sm:w-fit sm:gap-6 lg:w-full lg:grid-cols-2">
           {cards?.map((card, index) => (
             <div
               key={index}
-              className="flex items-center justify-between gap-2.5 rounded-2xl bg-black/10 p-3.5 lg:p-5 h-[126px] sm:h-[200px]"
+              className="flex h-[126px] items-center justify-between gap-2.5 rounded-2xl bg-black/10 p-3.5 sm:h-[200px] lg:p-5"
             >
               <div className="grid grid-cols-2 gap-2.5">
                 <Img
                   src={card.imgSrc}
-                  className="w-[105.9px] h-[105.9px] sm:w-[168px] sm:h-[168px] rounded-xl"
+                  className="size-[105.9px] rounded-xl sm:size-[168px]"
                 />
                 <div className="flex flex-col justify-between">
                   <div>
                     <Text variant="lg/default/white">{card.label}</Text>
-                    <Text variant="lg/default/white">NFT集合</Text>
+                    <Text variant="lg/default/white">
+                      {t('miner.nft.subtitle')}
+                    </Text>
                   </div>
                   <Button className="rounded-[10px] border max-sm:text-xs" full>
-                    开启挖矿
+                    {t('miner.nft.actions.start_mining')}
                   </Button>
                 </div>
               </div>
-              <div className="bg-white bg-opacity-10 flex flex-col justify-between text-center rounded-[12px] h-[105.9px] sm:h-[168px] px-2 pb-2 sm:px-3 ">
-                <h1 className="text-[46px] sm:text-[74px] leading-none text-primary">
+              <div className="flex h-[105.9px] flex-col justify-between rounded-[12px] bg-white bg-opacity-10 px-2 pb-2 text-center sm:h-[168px] sm:px-3 ">
+                <h1 className="text-primary text-[46px] leading-none sm:text-[74px]">
                   10
                 </h1>
-                <p className="text-[14px] sm:text-[20px] text-white opacity-70">可提数量</p>
-                <Button variant="sm/outline">提取代币</Button>
+                <p className="text-[14px] text-white opacity-70 sm:text-[20px]">
+                  {t('miner.nft.available_quantity')}
+                </p>
+                <Button variant="sm/outline">
+                  {t('miner.nft.actions.claim_rewards')}
+                </Button>
               </div>
             </div>
           ))}

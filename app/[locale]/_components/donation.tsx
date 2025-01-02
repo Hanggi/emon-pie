@@ -1,4 +1,7 @@
+'use client';
+
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -11,6 +14,7 @@ import ProgressBar from '@/components/progress';
 interface DonationProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Donation({ className, ...props }: DonationProps) {
+  const { t } = useTranslation('home');
   return (
     <>
       <div
@@ -21,7 +25,7 @@ export default function Donation({ className, ...props }: DonationProps) {
         )}
         {...props}
       >
-        <Text intent={'heading'}>集体捐赠</Text>
+        <Text intent={'heading'}>{t('donation.title')}</Text>
         <div className="relative">
           <div className="absolute -top-5 left-10">
             <Img
@@ -35,25 +39,25 @@ export default function Donation({ className, ...props }: DonationProps) {
                 100
               </span>
               <span className="text-primary text-stroke mt-6 text-[40px] md:text-[50px]">
-                亿
+                {t('donation.currency')}
               </span>
             </div>
             <Text variant="sm/default/white" className="opacity-70">
-              PIE捐赠池总币量
+              {t('donation.details.label')}
             </Text>
-            <ProgressBar progress={30} label="30亿" />
+            <ProgressBar progress={30} label={t('donation.progress')} />
             <div className="w-[319px] sm:w-[631px]">
               <p className="text-[16px] text-white sm:text-[24px]">
-                凡是捐赠的用户共同瓜分100亿PIE。
+                {t('donation.details.description')}
               </p>
               <p className="text-[16px] text-white sm:text-[24px]">
-                2025年1月1日3点14分开始-2025年1月10日3点14分截止
+                {t('donation.details.deadline')}
               </p>
             </div>
             <ClipboardInput />
             <div className="w-[380px] px-10 md:px-0">
               <Button full className="border" variant="lg/default">
-                链接钱包
+                {t('donation.action')}
               </Button>
             </div>
           </div>
